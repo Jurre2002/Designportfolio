@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Proxima Nova', sans-serif;
+}
+
+.container {
+    height: 100vh;
+    background-color: #2A2A2A;
+}
+
+.intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    gap: 1.5rem;
+}
+
+.intro img {
+    width: 12%;
+    height: auto;
+}
+
+.intro h1 {
+    margin: 0;
+    color: white;
+    font-size: 2rem;
+}
+
+.intro h3 {
+    margin: 0;
+    color: #CACACA;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.icons i {
+    color: #AE7AEB;
+    font-size: 1.5rem;
+}
