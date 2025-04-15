@@ -22,6 +22,8 @@ body {
 .intro img {
     width: 12%;
     height: auto;
+    background-color: white;
+    border-radius: 50%;
 }
 
 .intro h1 {
@@ -48,4 +50,29 @@ body {
 .icons i {
     color: #AE7AEB;
     font-size: 1.5rem;
+}
+
+nav {
+    display: flex;
+    background-color: #414141;
+    justify-content: space-between;
+}
+
+nav h1 {
+    color: white;
+    margin-left: 5rem;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+    list-style-type: none;
+    margin-right: 5rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
 }
