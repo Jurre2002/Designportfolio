@@ -52,10 +52,18 @@ body {
     font-size: 1.5rem;
 }
 
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+  
 nav {
     display: flex;
     background-color: #414141;
     justify-content: space-between;
+    align-items: center;
+    
 }
 
 nav h1 {
@@ -67,7 +75,7 @@ nav ul {
     display: flex;
     align-items: center;
     flex-direction: row;
-    gap: 1rem;
+    gap: 2.5rem;
     list-style-type: none;
     margin-right: 5rem;
 }
@@ -75,4 +83,38 @@ nav ul {
 nav ul li a {
     text-decoration: none;
     color: white;
+}
+
+.projects {
+    background-color: #3C3C3C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.projects h1 {
+    color: white;
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #474646;
+    width: 20rem;
+}
+
+.project img {
+    width: 20rem;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+}
+
+.extra {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 8rem;
 }
