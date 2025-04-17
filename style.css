@@ -129,6 +129,7 @@ nav ul li a {
     justify-content: center;
     flex-direction: row;
     gap: 20rem;
+    margin-top: 0.5rem;
 }
 
 .extra i {
@@ -141,6 +142,28 @@ nav ul li a {
     font-size: 1rem;
     font-weight: 400;
 }
+
+.extra1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 21.9rem;
+    margin-top: 0.5rem;
+}
+
+.extra1 i {
+    color: #AE7AEB;
+    font-size: 1.5rem;
+}
+
+.extra1 h3 {
+    color: #CACACA;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+
 
 .project h1 {
     color: white;
@@ -222,8 +245,14 @@ nav ul li a {
 .about_me h1 {
     color: white;
     font-size: 2rem;
+    margin-top: 5rem
+}
+
+.about h1 {
+    color: white;
+    font-size: 1.5rem;
+    margin-left: 1.4rem;
     margin-top: 1.5rem;
-    margin-left: 1.5rem;
 }
 
 .overview_about {
@@ -259,7 +288,8 @@ nav ul li a {
     align-items: center;
     justify-content: center;
     width: 20rem;
-    height: 32rem;
+    height: 30rem;
+    margin-bottom: 4.5rem;
 }
 
 .about p {
@@ -269,4 +299,18 @@ nav ul li a {
     margin-top: 0;
     margin-right: 1.4rem;
     margin-bottom: 1.5rem;
+}
+
+.contact {
+    display: flex;
+    background-color: #2A2A2A;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.contact h1 {
+    color: white;
+    font-size: 2rem;
+    margin-top: 5rem;
 }
