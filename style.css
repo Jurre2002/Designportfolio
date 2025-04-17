@@ -210,3 +210,63 @@ nav ul li a {
     margin-top: 0;
     margin-right: 1.4rem;
 }
+
+.about_me {
+    display: flex;
+    background-color: #3C3C3C;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.about_me h1 {
+    color: white;
+    font-size: 2rem;
+    margin-top: 1.5rem;
+    margin-left: 1.5rem;
+}
+
+.overview_about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 5rem;
+    
+}
+
+.overview_about1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    flex-direction: column;
+    margin-top: 4rem;
+    margin-bottom: 5rem;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 25rem;
+    background-color: #474646;
+    border-radius: 1rem;
+}
+
+.about_image img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20rem;
+    height: 32rem;
+}
+
+.about p {
+    color: #CACACA;
+    font-size: 1rem;
+    margin-left: 1.4rem;
+    margin-top: 0;
+    margin-right: 1.4rem;
+    margin-bottom: 1.5rem;
+}
