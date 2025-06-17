@@ -43,7 +43,7 @@ nav ul li a {
   align-items: center;
   gap: 25rem;
   overflow: hidden;
-  background-color: #ffffff;
+  background-color: white;
 }
 
 .slideshow-container {
@@ -51,6 +51,9 @@ nav ul li a {
   height: 100vh;
   width: 20vw;
   overflow: hidden;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+  z-index: 0;
 }
 
 .slide-track {
@@ -109,6 +112,7 @@ nav ul li a {
   opacity: 0.4;
   transform: translateX(-50%);
   z-index: 1;
+  display: none;
 }
 
 /* Tekst midden */
@@ -138,50 +142,191 @@ nav ul li a {
 }
 
 /* Hoverzones */
-.hover-zone {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 50%;
-  z-index: 5;
-  
-}
-.hover-left {
-  left: 0;
-}
+.hover-left,
 .hover-right {
-  right: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    pointer-events: auto;
+    z-index: 5;
+}
+
+/* Specifieke locatie van hoverzones */
+.hover-left {
+    left: 0;
+}
+
+.hover-right {
+    right: 0;
+}
+
+/* Pseudo-elementen voor alleen achtergrondkleur bij hover */
+.hover-left::before,
+.hover-right::before {
+    content: "";
+    position: absolute;
+    inset: 0; /* top:0; bottom:0; left:0; right:0; */
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+    pointer-events: none; /* Zorgt dat ze geen muisklikken blokkeren */
+    z-index: -1; /* Achter de hover-zone zelf */
+}
+
+/* Achtergrond wit bij hover */
+.hover-left:hover::before {
+   background-color: rgba(118, 165, 176, 0.558);
+}
+.hover-right:hover::before {
+   background-color: rgba(164, 209, 68, 0.558);
 }
 
 /* Hovertekst */
 .hover-left-text,
 .hover-right-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-  color: #000;
-  font-weight: 600;
-  font-size: 3rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    color: #000;
+    font-weight: 600;
+    font-size: 3rem;
 }
 
 .hover-left:hover ~ .text-overlay .hover-left-text {
-  opacity: 1;
+    opacity: 1;
 }
+
 .hover-right:hover ~ .text-overlay .hover-right-text {
-  opacity: 1;
+    opacity: 1;
 }
 
-.hover-left:hover {
-  background-color: rgba(0, 0, 0, 0.2);
+.slideshow-container img {
+    position: relative;
+    z-index: 1;
+    transition: z-index 0.3s ease;
 }
 
-.hover-right:hover {
-  background-color: rgba(0, 0, 0, 0.2);
+.hover-left:hover ~ .slideshow-container.left img,
+.hover-right:hover ~ .slideshow-container.right img {
+    z-index: 10;
 }
+
+/* my work */
+
+.myWork {
+  display: flex;
+  padding-top: 10rem;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.myWorkContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.ElementSmall {
+  position: relative;
+  display: inline-block;
+}
+
+.ElementSmall img {
+  height: 284px;
+  width: 570px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block; 
+  transition: transform 0.5s ease;
+}
+
+.ElementSmall:hover img {
+  transform: scale(1.1); /* Zoom in naar 110% */
+}
+
+.ElementSmall p {
+  position: absolute;
+  bottom: 20px;           /* iets boven de onderkant */
+  left: 20%;              /* horizontaal midden */
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 6px 12px;
+  font-weight: bold;
+  font-size: 2rem;
+  border-radius: 6px;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap; /* voorkom afbreken van tekst */
+  transition: transform 0.5s ease, font-size 0.5s ease;
+}
+
+.ElementSmall:hover p {
+  transform: translateX(-60%) translateY(30%) scale(1.1); /* Zoom in naar 110% */
+  font-size: 2.2rem;
+}
+
+.ElementBig {
+  position: relative;
+  display: inline-block;
+}
+
+.ElementBig img {
+  height: 442px;
+  width: 570px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block; 
+  transition: transform 0.5s ease;
+}
+
+.ElementBig:hover img {
+  transform: scale(1.1); /* Zoom in naar 110% */
+}
+
+.ElementBig p {
+  position: absolute;
+  bottom: 20px;           /* iets boven de onderkant */
+  left: 20%;              /* horizontaal midden */
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 6px 12px;
+  font-weight: bold;
+  font-size: 2rem;
+  border-radius: 6px;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap; /* voorkom afbreken van tekst */
+  transition: transform 0.5s ease, font-size 0.5s ease;
+}
+
+.ElementBig:hover p {
+  transform: translateX(-60%) translateY(30%) scale(1.1);
+  font-size: 2.2rem;
+}
+
+.woonzorg {
+  color: white;
+}
+
+.deccos {
+  color: white;
+}
+
+.woonzorgImg {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(135, 135, 135, 0.8));
+}
+
+.deccosImg {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(135, 135, 135, 0.8));
+}
+
 
 
 

@@ -1,7 +1,7 @@
 const hoverLeft = document.querySelector('.hover-left');
 const hoverRight = document.querySelector('.hover-right');
-const slideTrackUp = document.querySelector('.slide-track.up');
-const slideTrackDown = document.querySelector('.slide-track.down');
+const leftContainer = document.querySelector('.slideshow-container.left');
+const rightContainer = document.querySelector('.slideshow-container.right');
 
 hoverLeft.addEventListener('mouseenter', () => {
   slideTrackUp.classList.add('highlight');
@@ -15,4 +15,20 @@ hoverRight.addEventListener('mouseenter', () => {
 });
 hoverRight.addEventListener('mouseleave', () => {
   slideTrackDown.classList.remove('highlight');
+});
+
+hoverLeft.addEventListener('mouseenter', () => {
+  leftContainer.style.zIndex = 10;
+});
+
+hoverLeft.addEventListener('mouseleave', () => {
+  leftContainer.style.zIndex = '';
+});
+
+hoverRight.addEventListener('mouseenter', () => {
+  rightContainer.style.zIndex = 10;
+});
+
+hoverRight.addEventListener('mouseleave', () => {
+  rightContainer.style.zIndex = '';
 });
