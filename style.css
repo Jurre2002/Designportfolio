@@ -44,6 +44,7 @@ nav ul li a {
       gap: 25rem;
       overflow: hidden;
       background-color: white;
+      border-bottom: 1px solid #ACACAC;
     }
 
     /* Hover achtergrondkleuren als echte divs */
@@ -59,12 +60,12 @@ nav ul li a {
 
     .left-bg {
       left: 0;
-      background-color: rgba(118, 165, 176, 0.558);
+      background-color: #eaeaea;
     }
 
     .right-bg {
       right: 0;
-      background-color: rgba(186, 186, 186, 0.558);
+      background-color:  #b8b8b8;
     }
 
     /* Verticale lijn */
@@ -311,11 +312,11 @@ nav ul li a {
 }
 
 .woonzorgImg {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(135, 135, 135, 0.8));
+  background-color: #b8b8b8;
 }
 
 .deccosImg {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(135, 135, 135, 0.8));
+  background-color: #b8b8b8;
 }
 
 .escaperoom {
@@ -332,6 +333,83 @@ nav ul li a {
 
 .deccos {
   left: 6rem;
+}
+
+/* about me */
+
+.aboutMe {
+  display: flex;
+  padding-top: 10rem;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.aboutMeContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 32rem;
+  padding-bottom: 10rem;
+  justify-content: center;
+  
+}
+
+.pTekst {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* about me foto's */
+
+.AboutMePictures {
+  margin-left: 9.5rem;
+}
+
+.AboutMePicturesContainer {
+  position: relative;
+  width: max-content;
+  height: 20rem;
+}
+
+.AboutMePicturesContainer img {
+  position: absolute;
+  height: 442px;
+  width: 20rem;
+  object-fit: cover;
+  
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+/* Positioneer de afbeeldingen met kleine offset */
+.AboutMePicturesContainer img:nth-child(1) {
+  left: 0;
+  z-index: 3;
+}
+
+.AboutMePicturesContainer img:nth-child(2) {
+  left: 6rem;
+  z-index: 2;
+}
+
+.AboutMePicturesContainer img:nth-child(3) {
+  left: 12rem;
+  z-index: 1;
+}
+
+/* Bij hover op container, schuif de afbeeldingen uit elkaar */
+.AboutMePicturesContainer:hover img:nth-child(1) {
+  left: 0;
+}
+
+.AboutMePicturesContainer:hover img:nth-child(2) {
+  left: 27rem;
+}
+
+.AboutMePicturesContainer:hover img:nth-child(3) {
+  left: 54rem;
 }
 
 
