@@ -35,185 +35,178 @@ nav ul li a {
 
 /* intro section */
 
-.slideshow-intro {
-  position: relative;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 25rem;
-  overflow: hidden;
-  background-color: white;
-}
+    .slideshow-intro {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 25rem;
+      overflow: hidden;
+      background-color: white;
+    }
 
-.slideshow-container {
-  position: relative;
-  height: 100vh;
-  width: 20vw;
-  overflow: hidden;
-  background-color: transparent;
-  transition: background-color 0.3s ease;
-  z-index: 0;
-}
+    /* Hover achtergrondkleuren als echte divs */
+    .hover-bg {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 50%;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 0;
+    }
 
-.slide-track {
-   display: flex;
-  flex-direction: column;
-  gap: 2rem; /* 32px */
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  height: calc(2 * (80vh + 6rem)); /* hoogte van dubbele set */
-}
+    .left-bg {
+      left: 0;
+      background-color: rgba(118, 165, 176, 0.558);
+    }
 
-.slide-track.up {
-  animation-name: scrollUp;
-  animation-duration: 10s;
-}
+    .right-bg {
+      right: 0;
+      background-color: rgba(186, 186, 186, 0.558);
+    }
 
-.slide-track.down {
-  animation-name: scrollDown;
-  animation-duration: 10s;
-}
+    /* Verticale lijn */
+    .vertical-line {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 2px;
+      background-color: #ACACAC;
+      opacity: 0.4;
+      transform: translateX(-50%);
+      z-index: 1;
+      display: none;
+    }
 
-.slide-track img {
-  height: 20vh;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-}
+    .slideshow-container {
+      position: relative;
+      height: 100vh;
+      width: 20vw;
+      overflow: hidden;
+      background-color: transparent;
+      z-index: 1; /* hoger dan hover-bg */
+    }
 
-/* Scrollafstand = 4 afbeeldingen + 3 gaps */
-@keyframes scrollUp {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(calc(-80vh - 6rem));
-  }
-}
+    .slide-track {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      height: calc(2 * (80vh + 6rem));
+    }
 
-@keyframes scrollDown {
-  0% {
-    transform: translateY(calc(-80vh - 6rem));
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
+    .slide-track.up {
+      animation-name: scrollUp;
+      animation-duration: 10s;
+    }
 
-/* Verticale lijn */
-.vertical-line {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 2px;
-  background-color: #ACACAC;
-  opacity: 0.4;
-  transform: translateX(-50%);
-  z-index: 1;
-  display: none;
-}
+    .slide-track.down {
+      animation-name: scrollDown;
+      animation-duration: 10s;
+    }
 
-/* Tekst midden */
-.text-overlay {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: black;
-  z-index: 10;
-  user-select: none;
-  text-shadow: 0 0 10px rgba(255 255 255 / 0.7);
-}
+    .slide-track img {
+      height: 20vh;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+      position: relative;
+      z-index: 2;
+    }
 
-.text-overlay h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
+    @keyframes scrollUp {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(calc(-80vh - 6rem));
+      }
+    }
 
-.text-overlay h2 {
-  font-size: 3rem;
-  margin: 0.5rem 0;
-  position: relative;
-  height: 3.5rem;
-  overflow: visible;
-}
+    @keyframes scrollDown {
+      0% {
+        transform: translateY(calc(-80vh - 6rem));
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
 
-/* Hoverzones */
-.hover-left,
-.hover-right {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 50%;
-    pointer-events: auto;
-    z-index: 5;
-}
+    .text-overlay {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: black;
+      z-index: 10;
+      user-select: none;
+      text-shadow: 0 0 10px rgba(255 255 255 / 0.7);
+    }
 
-/* Specifieke locatie van hoverzones */
-.hover-left {
-    left: 0;
-}
+    .text-overlay h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
 
-.hover-right {
-    right: 0;
-}
+    .text-overlay h2 {
+      font-size: 3rem;
+      margin: 0.5rem 0;
+      position: relative;
+      height: 3.5rem;
+      overflow: visible;
+    }
 
-/* Pseudo-elementen voor alleen achtergrondkleur bij hover */
-.hover-left::before,
-.hover-right::before {
-    content: "";
-    position: absolute;
-    inset: 0; /* top:0; bottom:0; left:0; right:0; */
-    background-color: transparent;
-    transition: background-color 0.3s ease;
-    pointer-events: none; /* Zorgt dat ze geen muisklikken blokkeren */
-    z-index: -1; /* Achter de hover-zone zelf */
-}
+    .hover-left,
+    .hover-right {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 50%;
+      pointer-events: auto;
+      z-index: 5;
+    }
 
-/* Achtergrond wit bij hover */
-.hover-left:hover::before {
-   background-color: rgba(118, 165, 176, 0.558);
-}
-.hover-right:hover::before {
-   background-color: rgba(164, 209, 68, 0.558);
-}
+    .hover-left {
+      left: 0;
+    }
 
-/* Hovertekst */
-.hover-left-text,
-.hover-right-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-    color: #000;
-    font-weight: 600;
-    font-size: 3rem;
-}
+    .hover-right {
+      right: 0;
+    }
 
-.hover-left:hover ~ .text-overlay .hover-left-text {
-    opacity: 1;
-}
+    /* Hovertekst */
+    .hover-left-text,
+    .hover-right-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      color: #000;
+      font-weight: 600;
+      font-size: 3rem;
+    }
 
-.hover-right:hover ~ .text-overlay .hover-right-text {
-    opacity: 1;
-}
+    .hover-left:hover ~ .text-overlay .hover-left-text {
+      opacity: 1;
+    }
 
-.slideshow-container img {
-    position: relative;
-    z-index: 1;
-    transition: z-index 0.3s ease;
-}
+    .hover-right:hover ~ .text-overlay .hover-right-text {
+      opacity: 1;
+    }
 
-.hover-left:hover ~ .slideshow-container.left img,
-.hover-right:hover ~ .slideshow-container.right img {
-    z-index: 10;
-}
+    /* Hover activeren achtergrondkleur via echte divs */
+    .hover-left:hover ~ .left-bg,
+    .hover-right:hover ~ .right-bg {
+      opacity: 1;
+    }
 
 /* my work */
 
@@ -254,7 +247,6 @@ nav ul li a {
 .ElementSmall p {
   position: absolute;
   bottom: 20px;           /* iets boven de onderkant */
-  left: 20%;              /* horizontaal midden */
   transform: translateX(-50%);
   margin: 0;
   padding: 6px 12px;
@@ -293,7 +285,6 @@ nav ul li a {
 .ElementBig p {
   position: absolute;
   bottom: 20px;           /* iets boven de onderkant */
-  left: 20%;              /* horizontaal midden */
   transform: translateX(-50%);
   margin: 0;
   padding: 6px 12px;
@@ -327,8 +318,20 @@ nav ul li a {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(135, 135, 135, 0.8));
 }
 
+.escaperoom {
+  left: 5rem;
+}
 
+.filmshape {
+  left: 7rem;
+}
 
+.woonzorg {
+  left: 7rem;
+}
 
+.deccos {
+  left: 6rem;
+}
 
 
