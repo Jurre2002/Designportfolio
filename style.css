@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Proxima Nova', sans-serif;
+    font-family: 'Playfair', sans-serif;
 }
 
 /* nav section */
@@ -44,7 +44,7 @@ nav ul li a {
       gap: 25rem;
       overflow: hidden;
       background-color: white;
-      border-bottom: 1px solid #ACACAC;
+      
     }
 
     /* Hover achtergrondkleuren als echte divs */
@@ -213,7 +213,7 @@ nav ul li a {
 
 .myWork {
   display: flex;
-  padding-top: 10rem;
+  padding-top: 15rem;
   justify-content: center;
   align-items: center;
   gap: 3rem;
@@ -239,6 +239,7 @@ nav ul li a {
   border-radius: 10px;
   display: block; 
   transition: transform 0.5s ease;
+  cursor: pointer;
 }
 
 .ElementSmall:hover img {
@@ -277,6 +278,7 @@ nav ul li a {
   border-radius: 10px;
   display: block; 
   transition: transform 0.5s ease;
+  cursor: pointer;
 }
 
 .ElementBig:hover img {
@@ -339,19 +341,23 @@ nav ul li a {
 
 .aboutMe {
   display: flex;
-  padding-top: 10rem;
+  padding-top: 15rem;
   justify-content: center;
   align-items: center;
   gap: 3rem;
 }
 
+.aboutMe h1 {
+  font-size: 2rem;
+  font-weight: normal;
+}
+
 .aboutMeContainer {
   display: flex;
   flex-direction: row;
-  gap: 32rem;
+  gap: 29rem;
   padding-bottom: 10rem;
   justify-content: center;
-  
 }
 
 .pTekst {
@@ -359,6 +365,11 @@ nav ul li a {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+
+.pTekst p {
+  font-size: 1.2rem;
+  font-weight: lighter;
 }
 
 /* about me foto's */
@@ -375,12 +386,10 @@ nav ul li a {
 
 .AboutMePicturesContainer img {
   position: absolute;
-  height: 442px;
+  height: 28rem;
   width: 20rem;
   object-fit: cover;
-  
   transition: all 0.5s ease;
-  cursor: pointer;
 }
 
 /* Positioneer de afbeeldingen met kleine offset */
@@ -410,6 +419,41 @@ nav ul li a {
 
 .AboutMePicturesContainer:hover img:nth-child(3) {
   left: 54rem;
+}
+
+/* contact me */
+
+.contactMe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 20rem;
+}
+
+.contactMe h1 {
+  font-size: 2.5rem;
+  font-weight: normal;
+}
+
+.contactMeContainer {
+  display: flex;
+  flex-direction: row;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  gap: 3rem;
+  justify-content: center;
+}
+
+.socialMedia {
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+  font-size: 2rem;
+}
+
+.copyright {
+  color: #878787;
 }
 
 
