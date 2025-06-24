@@ -2,5 +2,169 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Playfair', sans-serif;
+    font-family: 'Playfair';
+}
+
+.puzzelIntro {
+    flex-direction: column;
+    padding-top: 5rem;
+    padding-right: 5rem;
+}
+
+.puzzelIntroContainer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: 7rem;
+    font-size: 1.2rem;
+}
+
+.puzzelIntro h1 {
+    margin-left: 7rem;
+    font-weight: normal;    
+    font-size: 3.5rem;
+    margin-bottom: 5rem;
+}
+
+.puzzelIntro a {
+    margin-left: 7rem;
+    text-decoration: none;
+    color: black;
+    background-color: black;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    color: white;
+    font-size: 1.2rem;
+}
+
+/* puzzelImg section */
+
+.puzzelImg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.puzzelImg img {
+    width: 80rem;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.puzzelContainer {
+    display: flex;
+    gap: 4rem;
+    margin-top: 4rem;
+}
+
+.puzzelContainer img {
+    width: 38rem;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+/* More information */
+
+.aboutMe {
+  display: flex;
+  padding-top: 10rem;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.aboutMe h1 {
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+.aboutMeContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 37rem;
+  padding-bottom: 10rem;
+  justify-content: center;
+}
+
+.pTekst {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.pTekst p {
+  font-size: 1.2rem;
+  font-weight: lighter;
+}
+
+/* ohter projects */
+
+.otherProjects {
+  display: flex;
+  flex-direction: column;
+  padding-top: 5rem;
+  margin-left: 7rem;
+}
+
+.otherProjects h1 {
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+.otherProjectsContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  padding-bottom: 10rem;
+  margin-top: 5rem;
+}
+
+.otherProjectsElement1 img {
+  width: 30rem;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.otherProjectsElement img {
+  width: 20rem;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+/* contact me */
+
+.contactMe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 5rem;
+}
+
+.contactMe h1 {
+  font-size: 2.5rem;
+  font-weight: normal;
+}
+
+.contactMeContainer {
+  display: flex;
+  flex-direction: row;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  gap: 3rem;
+  justify-content: center;
+}
+
+.socialMedia {
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+  font-size: 2rem;
+}
+
+.copyright {
+  color: #878787;
 }
