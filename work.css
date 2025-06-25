@@ -170,6 +170,10 @@ body {
   color: #878787;
 }
 
+.socialMedia a {
+  color: black;
+}
+
 @media (max-width: 1350px) {
   .puzzelIntro,
   .puzzelIntro h1,
