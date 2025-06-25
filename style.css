@@ -154,6 +154,18 @@ nav ul li a {
       margin-bottom: 1rem;
     }
 
+    .extra-text {
+      opacity: 0;
+    }
+
+    .extra-text1 {
+      opacity: 0;
+    }
+
+    .left-text {
+      opacity: 0;
+    }
+
     .text-overlay h2 {
       font-size: 3rem;
       margin: 0.5rem 0;
@@ -458,17 +470,22 @@ nav ul li a {
 
 @media (max-width: 768px) {
   .slideshow-intro {
-    flex-direction: column;
-    gap: 1rem;
-    height: auto;
-    padding: 2rem 1rem;
-  }
-
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+  height: auto;
+  padding: 2rem 0;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0rem;
+}
   .text-overlay {
     position: static;
     transform: none;
     text-align: center;
     z-index: 2;
+    margin-bottom: 4rem;
+    margin-top: 2rem;
   }
 
   .text-overlay h1,
@@ -479,7 +496,6 @@ nav ul li a {
   .slideshow-container {
     width: 100%;
     height: auto;
-    overflow: hidden;
   }
 
   .slide-track {
@@ -489,6 +505,7 @@ nav ul li a {
     width: max-content;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+    height: auto;
   }
 
   .slideshow-container.left .slide-track {
@@ -502,8 +519,8 @@ nav ul li a {
   }
 
 .slide-track img {
-  height: 10rem;
-  width: 10rem;
+  height: 12rem;
+  width: 15rem;
   object-fit: cover;
   border-radius: 10px;
   flex-shrink: 0;
@@ -533,8 +550,183 @@ nav ul li a {
   .vertical-line,
   .hover-left-text,
   .hover-right-text {
-    display: none !important;
+    display: 1;
   }
-}
+
+  .hover-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .hover-left-text,
+  .hover-right-text {
+  opacity: 1 !important;
+  position: static;
+  transform: none;
+  font-size: 1.5rem;
+  font-weight: normal;
+  }
+
+  .extra-text {
+    opacity: 1 !important;
+    position: static;
+    transform: none;
+    font-size: 1.5rem;
+    font-weight: normal;
+  }
+
+  .extra-text1 {
+    opacity: 1 !important;
+    position: static;
+    transform: none;
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin-top: 1rem;
+  }
+
+  .hover-text1 {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .left-text {
+    opacity: 1 !important;
+    position: static;
+    transform: none;
+    font-size: 1.5rem;
+  }
+
+  .hover-left-text {
+    display: none;
+  }
+
+  .a {
+    display: none;
+  }
+
+    .myWork {
+    flex-direction: column;
+    padding-top: 5rem; /* minder padding bovenaan */
+    gap: 2rem;
+  }
+
+  .myWorkContainer {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  /* Zorg dat containers onder elkaar kleiner worden en ruimte innemen */
+  .myWorkContainer:nth-child(odd) {
+    flex-wrap: nowrap;
+  }
+
+  /* Kleinere afbeeldingen en iets smaller */
+  .ElementSmall img,
+  .ElementBig img {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    border-radius: 10px;
+  }
+
+  /* Zet de elementen onder elkaar in column richting */
+    .myWorkContainer {
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 320px;
+  }
+
+  .ElementSmall, .ElementBig {
+    flex: 1 1 100%;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+
+  /* Tekst positionering eenvoudiger en centraal */
+  .ElementSmall p,
+  .ElementBig p {
+    position: absolute;
+    bottom: 10px;
+    left: 23% !important;
+    transform: translateX(-50%) translateY(0);
+    font-size: 1.4rem;
+    white-space: nowrap;
+    padding: 4px 8px;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .ElementSmall p {
+    position: absolute;
+    bottom: 10px;
+    left: 20% !important;
+    transform: translateX(-50%) translateY(0);
+    font-size: 1.4rem;
+    white-space: nowrap;
+    padding: 4px 8px;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .aboutMeContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 0 2rem 5rem 2rem;
+  }
+
+  .aboutMe h1,
+  .otherProjects h1,
+  .contactMe h1 {
+    margin-top: auto;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .pTekst {
+    width: 90%;
+  }
+
+    .AboutMePictures {
+    margin-left: 0;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+  }
+
+  .AboutMePicturesContainer {
+    position: static;
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .AboutMePicturesContainer img {
+    position: static !important; /* overschrijf absolute */
+    width: 90vw;
+    height: 50vh;
+    object-fit: cover;
+    transition: none !important;
+    border-radius: 10px;
+    left: auto !important; /* verwijder left offsets */
+    z-index: auto !important;
+  }
+
+  .contactMe {
+    padding-top: 10rem;
+  }
+
+  }
+
+
+
 
 
