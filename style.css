@@ -456,4 +456,85 @@ nav ul li a {
   color: #878787;
 }
 
+@media (max-width: 768px) {
+  .slideshow-intro {
+    flex-direction: column;
+    gap: 1rem;
+    height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .text-overlay {
+    position: static;
+    transform: none;
+    text-align: center;
+    z-index: 2;
+  }
+
+  .text-overlay h1,
+  .text-overlay h2 {
+    font-size: 2rem;
+  }
+
+  .slideshow-container {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .slide-track {
+    flex-direction: row;
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  .slideshow-container.left .slide-track {
+    animation-name: scrollLeft;
+    animation-duration: 15s;
+  }
+
+  .slideshow-container.right .slide-track {
+    animation-name: scrollRight;
+    animation-duration: 15s;
+  }
+
+.slide-track img {
+  height: 10rem;
+  width: 10rem;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+  @keyframes scrollLeft {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-50%));
+    }
+  }
+
+  @keyframes scrollRight {
+    0% {
+      transform: translateX(calc(-50%));
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  .hover-left,
+  .hover-right,
+  .hover-bg,
+  .vertical-line,
+  .hover-left-text,
+  .hover-right-text {
+    display: none !important;
+  }
+}
+
 
