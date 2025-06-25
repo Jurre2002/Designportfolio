@@ -130,6 +130,7 @@ body {
 
 .otherProjectsElement img {
   width: 20rem;
+  height: 13rem;
   object-fit: cover;
   border-radius: 1rem;
 }
