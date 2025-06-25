@@ -464,6 +464,10 @@ nav ul li a {
   font-size: 2rem;
 }
 
+.socialMedia a {
+  color: black;
+}
+
 .copyright {
   color: #878787;
 }
