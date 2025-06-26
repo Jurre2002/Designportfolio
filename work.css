@@ -26,7 +26,7 @@ body {
     margin-bottom: 5rem;
 }
 
-.puzzelIntro a {
+.puzzelLink a {
     margin-left: 7rem;
     text-decoration: none;
     color: black;
@@ -35,6 +35,10 @@ body {
     border-radius: 2rem;
     color: white;
     font-size: 1.2rem;
+}
+
+.back {
+  opacity: 0;
 }
 
 /* puzzelImg section */
@@ -211,7 +215,7 @@ body {
 
   .otherProjects {
     margin-left: 2rem;
-    margin-right: 2rem;
+    
     align-items: center;
   }
 
@@ -280,13 +284,22 @@ body {
 
 @media (max-width: 768px) {
   .puzzelIntro h1 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
+    font-size: 1.9rem;
+    margin-left: 1rem;
+    margin-bottom: 3rem;
+    width: 100%;
   }
 
   .puzzelIntro a {
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
+    margin-left: 1rem;
+  }
+
+  .puzzelIntroContainer {
+    margin-left: 1rem;
+    font-size: 1rem;
+    margin-top: 2rem;
   }
 
   .aboutMe h1,
@@ -323,4 +336,31 @@ body {
     gap: 2rem;
     margin: 0 2rem;
   }
+
+  .back {
+  position: absolute;
+  top: 3rem;
+  margin-bottom: 2rem;
+  left: 0.5rem;
+  display: flex;
+  align-items: center;
+  opacity: 1; /* Zorg dat hij zichtbaar is */
+  z-index: 1000; /* Zorg dat hij boven andere elementen ligt */
 }
+
+.back a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: black;
+  font-size: 1.2rem;
+  background-color: white;
+  padding: 0;
+}
+
+.back i {
+  font-size: 2rem;
+}
+}
+
